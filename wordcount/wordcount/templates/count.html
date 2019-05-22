@@ -1,0 +1,28 @@
+<style>
+ body{
+    margin-top: 50px;
+    }
+a {text-decoration: none; font-size: 20px;}
+.color{color:rgb(55, 184, 141); }
+h1 {line-height:50pt;}
+.nowrap {white-space:nowrap;}
+</style>
+<center>
+<body>
+     <h1>당신이 입력한 텍스트는 <span class=color>{{total}}</span>단어로 구성되어 있습니다.</h1>
+ <table width="70%" bgcolor="#FFFF99" cellspacing="5" >
+      <tr bgcolor="white">
+        <th  width="50%">
+<h1>입력한 텍스트 </h1>
+{{fulltext}}</th>
+
+        <th>
+<h1>단어 카운트</h1>
+
+{% for word, countTotal in dictionary %}
+{{ word }} - {{countTotal}} 
+<br>
+{% endfor %} </th></tr>
+<p><a href="{% url 'home' %}">REPLAY?</a></p>
+</body>
+</center>
